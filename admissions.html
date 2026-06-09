@@ -1,98 +1,456 @@
-(function() {
-  // ── Configuration ────────────────────────────────────────────
-  var ANNONCE = {
-    texte:  "📢 Inscriptions 2026–2027 ouvertes\u00a0! Places limitées.",
-    bouton: "Nous contacter",
-    lien:   "../contact.html"
-  };
-  // ─────────────────────────────────────────────────────────────
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Admissions - Complexe Scolaire Privé Franco-Arabe Mihyarou Souna" />
+  <title>Admissions & Modalités - Mihyarou Souna</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="assets/logo.png" type="image/png">
 
-  var CSS = [
-    // Popup overlay
-    '#ms-overlay{position:fixed;inset:0;background:rgba(10,40,38,.72);z-index:99999;display:flex;align-items:center;justify-content:center;padding:16px;backdrop-filter:blur(3px);animation:ms-fadein .3s ease}',
-    '@keyframes ms-fadein{from{opacity:0}to{opacity:1}}',
-    '#ms-popup{background:#fff;border-radius:20px;max-width:480px;width:100%;padding:36px 32px 28px;position:relative;box-shadow:0 32px 80px rgba(0,0,0,.22);animation:ms-slidein .35s cubic-bezier(.22,.68,0,1.2)}',
-    '@keyframes ms-slidein{from{opacity:0;transform:translateY(24px) scale(.96)}to{opacity:1;transform:none}}',
-    '#ms-popup-badge{display:inline-block;background:#eef8f6;color:#075e57;border-radius:999px;padding:6px 14px;font-size:12px;font-weight:800;letter-spacing:.04em;margin-bottom:18px}',
-    '#ms-popup-title{font-size:22px;font-weight:900;color:#0c2b28;line-height:1.3;margin:0 0 10px;font-family:Poppins,Arial,sans-serif}',
-    '#ms-popup-sub{font-size:14px;color:#486174;line-height:1.6;margin:0 0 24px}',
-    '#ms-popup-actions{display:flex;gap:10px;flex-wrap:wrap}',
-    '#ms-popup-btn{background:#d79a12;color:#fff;border:none;border-radius:999px;padding:13px 22px;font-size:14px;font-weight:900;cursor:pointer;text-decoration:none;transition:opacity .2s}',
-    '#ms-popup-btn:hover{opacity:.88}',
-    '#ms-popup-close-btn{background:#f4f6f8;color:#486174;border:none;border-radius:999px;padding:13px 22px;font-size:14px;font-weight:800;cursor:pointer;transition:background .2s}',
-    '#ms-popup-close-btn:hover{background:#e8eaec}',
-    '#ms-popup-x{position:absolute;top:14px;right:16px;background:none;border:none;font-size:22px;color:#aaa;cursor:pointer;line-height:1;padding:4px 8px;border-radius:50%;transition:background .2s}',
-    '#ms-popup-x:hover{background:#f0f0f0;color:#333}',
-    '@media(max-width:480px){#ms-popup{padding:28px 18px 22px;border-radius:16px}#ms-popup-title{font-size:19px}#ms-popup-actions{flex-direction:column}#ms-popup-btn,#ms-popup-close-btn{text-align:center;width:100%;box-sizing:border-box}}',
-    // Bandeau flottant
-    '#ms-bandeau{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:9999;display:flex;align-items:center;gap:12px;background:#075e57;color:#fff;border-radius:999px;padding:10px 16px 10px 18px;box-shadow:0 8px 28px rgba(7,94,87,.35);font-family:Nunito,Arial,sans-serif;white-space:nowrap;animation:ms-slidein-up .4s cubic-bezier(.22,.68,0,1.2);max-width:calc(100vw - 32px)}',
-    '@keyframes ms-slidein-up{from{opacity:0;transform:translateX(-50%) translateY(18px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}',
-    '#ms-bandeau-dot{width:8px;height:8px;border-radius:50%;background:#d79a12;flex-shrink:0;animation:ms-pulse 2s infinite}',
-    '@keyframes ms-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(.85)}}',
-    '#ms-bandeau-texte{font-size:13px;font-weight:700;overflow:hidden;text-overflow:ellipsis}',
-    '#ms-bandeau-btn{background:#d79a12;color:#fff;border:none;border-radius:999px;padding:7px 14px;font-size:12px;font-weight:900;cursor:pointer;text-decoration:none;white-space:nowrap;flex-shrink:0;transition:opacity .2s}',
-    '#ms-bandeau-btn:hover{opacity:.88}',
-    '#ms-bandeau-x{background:rgba(255,255,255,.15);border:none;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;cursor:pointer;flex-shrink:0;transition:background .2s;line-height:1}',
-    '#ms-bandeau-x:hover{background:rgba(255,255,255,.28)}',
-    '@media(max-width:600px){#ms-bandeau{bottom:12px;padding:9px 12px 9px 14px;gap:8px}#ms-bandeau-texte{font-size:12px}#ms-bandeau-btn{padding:6px 10px;font-size:11px}}'
-  ].join('');
+<style>
+.portal-btn-adjust{
+    margin-right:24px !important;
+}
+</style>
 
-  var style = document.createElement('style');
-  style.textContent = CSS;
-  document.head.appendChild(style);
 
-  // ── Popup (une seule fois par session) ───────────────────────
-  function afficherBandeau() {
-    if (document.getElementById('ms-bandeau')) return;
-    var b = document.createElement('div');
-    b.id = 'ms-bandeau';
-    b.innerHTML = [
-      '<span id="ms-bandeau-dot"></span>',
-      '<span id="ms-bandeau-texte">' + ANNONCE.texte + '</span>',
-      '<a id="ms-bandeau-btn" href="' + ANNONCE.lien + '">' + ANNONCE.bouton + '</a>',
-      '<button id="ms-bandeau-x" aria-label="Fermer la bannière">✕</button>'
-    ].join('');
-    document.body.appendChild(b);
-    document.getElementById('ms-bandeau-x').addEventListener('click', function() {
-      b.style.animation = 'ms-slidein-up .25s ease reverse';
-      setTimeout(function() { b.remove(); }, 220);
-    });
+<style>
+/* Fix définitif : logo du header contenu dans la hauteur de la barre */
+header img,
+.navbar img,
+.site-header img,
+.header img,
+.logo img,
+.brand img{
+  max-height:72px !important;
+  width:auto !important;
+  object-fit:contain !important;
+  display:block !important;
+}
+
+header,
+.navbar,
+.site-header,
+.header{
+  min-height:80px !important;
+  overflow:hidden !important;
+  display:flex !important;
+  align-items:center !important;
+}
+
+.logo,
+.brand,
+.navbar-brand{
+  height:72px !important;
+  display:flex !important;
+  align-items:center !important;
+  overflow:hidden !important;
+}
+</style>
+
+
+<style>
+/* Footer toujours en bas de page sur les pages courtes */
+html, body{
+  min-height:100%;
+}
+body{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+main, .main, .page-content, .content{
+  flex:1 0 auto;
+}
+footer, .ms-footer{
+  margin-top:auto !important;
+  flex-shrink:0;
+}
+</style>
+
+
+<style>
+.flag-circle{
+display:inline-flex;
+width:34px;
+height:34px;
+border-radius:50%;
+overflow:hidden;
+vertical-align:middle;
+margin-right:10px;
+box-shadow:0 2px 8px rgba(0,0,0,.15);
+border:2px solid #fff;
+}
+.flag-circle span{
+flex:1;
+height:100%;
+}
+.flag-green{background:#00853F;}
+.flag-yellow{background:#FDEF42;}
+.flag-red{background:#E31B23;}
+.program-title-flex{display:flex;align-items:center;gap:10px;}
+</style>
+
+
+<style>
+.program-title-flex{
+display:flex!important;
+align-items:center!important;
+gap:14px;
+margin-bottom:8px;
+}
+.flag-circle{
+width:34px;height:34px;border-radius:50%;
+overflow:hidden;display:flex;position:relative;
+box-shadow:0 2px 8px rgba(0,0,0,.15);
+flex-shrink:0;
+}
+.flag-green,.flag-yellow,.flag-red{flex:1;height:100%;}
+.flag-green{background:#00853F;}
+.flag-yellow{background:#FDEF42;}
+.flag-red{background:#E31B23;}
+.flag-star{
+position:absolute;
+left:50%;
+top:50%;
+transform:translate(-50%,-50%);
+color:#00853F;
+font-size:12px;
+font-weight:900;
+line-height:1;
+}
+</style>
+
+<style>
+/* Corrections réelles Programmes + Nos Écoles */
+.program-title-clean{
+  display:flex!important;
+  align-items:center!important;
+  gap:14px!important;
+  margin:0 0 18px!important;
+  font-size:24px!important;
+  font-weight:900!important;
+  color:#00152e!important;
+}
+.sn-flag-round{
+  width:34px!important;
+  height:34px!important;
+  border-radius:50%!important;
+  overflow:hidden!important;
+  display:inline-flex!important;
+  position:relative!important;
+  flex-shrink:0!important;
+  box-shadow:0 2px 8px rgba(0,0,0,.18)!important;
+  border:2px solid #fff!important;
+}
+.sn-flag-round .green{background:#00853F;flex:1;height:100%;}
+.sn-flag-round .yellow{background:#FDEF42;flex:1;height:100%;}
+.sn-flag-round .red{background:#E31B23;flex:1;height:100%;}
+.sn-flag-round .star{
+  position:absolute!important;
+  left:50%!important;
+  top:50%!important;
+  transform:translate(-50%,-50%)!important;
+  color:#00853F!important;
+  font-size:11px!important;
+  font-weight:900!important;
+  line-height:1!important;
+}
+.schools-stats-restore{
+  display:grid!important;
+  grid-template-columns:repeat(4,1fr)!important;
+  gap:15px!important;
+  margin:25px 0!important;
+}
+.schools-stats-restore .stat{
+  background:#fff!important;
+  padding:20px!important;
+  border-radius:16px!important;
+  text-align:center!important;
+  box-shadow:0 8px 22px rgba(0,0,0,.06)!important;
+}
+.schools-stats-restore .stat strong{
+  display:block!important;
+  color:#075e57!important;
+  font-size:28px!important;
+}
+@media(max-width:767px){
+  .schools-stats-restore{grid-template-columns:repeat(2,1fr)!important;}
+}
+</style>
+
+
+<style>
+.adm-page{background:#f7faf9;color:#10233f}
+.adm-hero,.adm-wrap{max-width:1400px;margin:35px auto 0;padding:0 24px}
+.adm-banner{background:linear-gradient(135deg,#075e57,#0b7a74);color:#fff;border-radius:22px;padding:36px 40px;box-shadow:0 14px 34px rgba(7,94,87,.12)}
+.adm-banner h1{font-size:34px;margin:0 0 10px}
+.adm-banner p{margin:0;line-height:1.6;max-width:980px;font-size:15px}
+.adm-wrap{margin-top:0;margin-bottom:70px}
+.adm-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px}
+.adm-card,.adm-table-card{background:#fff;border-radius:18px;padding:20px;box-shadow:0 8px 22px rgba(16,35,63,.06);border:1px solid rgba(7,94,87,.07)}
+.adm-card h2,.adm-table-card h2{color:#075e57;margin:0 0 12px;font-size:21px}
+.adm-card h3{color:#075e57;margin:14px 0 8px;font-size:16px}
+.adm-card p,.adm-card li{font-size:14px;line-height:1.5}
+.adm-card ul{margin:0;padding-left:18px}
+.adm-note{background:#fff8e8;border-left:5px solid #d79a12}
+.adm-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.adm-badge{background:#eef8f6;color:#075e57;border-radius:999px;padding:7px 10px;font-size:12px;font-weight:800}
+.adm-tabs{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 10px}
+.adm-tab{background:#075e57;color:white;border-radius:999px;padding:8px 13px;font-weight:800;font-size:13px}
+.adm-table-card{margin-top:18px}
+.table-scroll{overflow:auto;border-radius:12px;border:1px solid #e5eeee}
+.adm-table{width:100%;border-collapse:collapse;min-width:820px;font-size:13px}
+.adm-table th{background:#075e57;color:#fff;padding:10px;text-align:left}
+.adm-table td{padding:9px 10px;border-bottom:1px solid #edf1f1;vertical-align:top}
+.adm-table tr:nth-child(even){background:#f9fcfb}
+.adm-table strong{color:#075e57}
+.adm-mini{font-size:12px;color:#486174}
+.adm-cta{margin-top:22px;background:linear-gradient(135deg,#075e57,#0b7a74);color:white;border-radius:18px;padding:24px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.adm-cta h2{margin:0 0 6px;color:#fff;font-size:22px}
+.adm-cta p{margin:0;font-size:14px;line-height:1.5}
+.adm-cta a{background:#d79a12;color:#fff;text-decoration:none;border-radius:999px;padding:11px 16px;font-weight:900;white-space:nowrap}
+@media(max-width:767px){.adm-grid{grid-template-columns:1fr}.adm-banner{padding:28px 20px}.adm-cta{flex-direction:column;align-items:flex-start}}
+</style>
+
+
+<style>
+/* Hero uniforme compact type page Contact */
+.uniform-page-hero,
+.presentation-hero-inner,
+.schools-banner,
+.programs-banner,
+.adm-banner,
+.contact-banner{
+  background:linear-gradient(135deg,#075e57,#0b7a74)!important;
+  color:#fff!important;
+  border-radius:22px!important;
+  padding:36px 40px!important;
+  box-shadow:0 14px 34px rgba(7,94,87,.12)!important;
+}
+
+.presentation-hero,
+.schools-hero,
+.programs-hero,
+.adm-hero,
+.contact-hero{
+  max-width:1400px!important;
+  margin:35px auto 0!important;
+  padding:0 24px!important;
+}
+
+.presentation-kicker,
+.contact-badge,
+.uniform-hero-badge{
+  display:inline-block!important;
+  background:#d79a12!important;
+  color:#fff!important;
+  border-radius:999px!important;
+  padding:6px 12px!important;
+  font-size:12px!important;
+  font-weight:900!important;
+  letter-spacing:0!important;
+  text-transform:none!important;
+  margin-bottom:12px!important;
+}
+
+.presentation-hero h1,
+.schools-banner h1,
+.programs-banner h1,
+.adm-banner h1,
+.contact-banner h1{
+  font-size:28px!important;
+  line-height:1.22!important;
+  margin:0 0 14px!important;
+  color:#fff!important;
+}
+
+.presentation-hero p,
+.schools-banner p,
+.programs-banner p,
+.adm-banner p,
+.contact-banner p{
+  font-size:14px!important;
+  line-height:1.55!important;
+  max-width:850px!important;
+  margin:0!important;
+  color:#fff!important;
+}
+
+.founder-card{
+  transform:scale(.88)!important;
+  transform-origin:center!important;
+}
+.founder-card img,
+.founder-photo{
+  width:105px!important;
+  height:105px!important;
+  object-fit:cover!important;
+  object-position:center 15%!important;
+  border-radius:50%!important;
+  border:3px solid #d79a12!important;
+  box-shadow:0 6px 14px rgba(0,0,0,.10)!important;
+}
+.founder-name{
+  font-size:14px!important;
+  margin-top:7px!important;
+}
+.founder-role{
+  font-size:12px!important;
+}
+@media(max-width:767px){
+  .presentation-hero-inner,
+  .schools-banner,
+  .programs-banner,
+  .adm-banner,
+  .contact-banner{
+    padding:28px 24px!important;
   }
-
-  if (!sessionStorage.getItem('annonce-fermee')) {
-    var overlay = document.createElement('div');
-    overlay.id = 'ms-overlay';
-    overlay.innerHTML = [
-      '<div id="ms-popup" role="dialog" aria-modal="true" aria-labelledby="ms-popup-title">',
-      '  <button id="ms-popup-x" aria-label="Fermer">✕</button>',
-      '  <div id="ms-popup-badge">📣 Annonce importante</div>',
-      '  <h2 id="ms-popup-title">' + ANNONCE.texte + '</h2>',
-      '  <p id="ms-popup-sub">Rejoignez le Complexe Scolaire Privé Franco-Arabe Mihyarou Souna pour l\'année 2026–2027. Prenez contact avec notre administration pour connaître les modalités et assurer la place de votre enfant.</p>',
-      '  <div id="ms-popup-actions">',
-      '    <a id="ms-popup-btn" href="' + ANNONCE.lien + '">' + ANNONCE.bouton + '</a>',
-      '    <button id="ms-popup-close-btn">Fermer</button>',
-      '  </div>',
-      '</div>'
-    ].join('');
-    document.body.appendChild(overlay);
-
-    function fermerPopup() {
-      overlay.style.animation = 'ms-fadein .2s ease reverse';
-      setTimeout(function() {
-        overlay.remove();
-        afficherBandeau();
-      }, 180);
-      sessionStorage.setItem('annonce-fermee', '1');
-    }
-
-    document.getElementById('ms-popup-x').addEventListener('click', fermerPopup);
-    document.getElementById('ms-popup-close-btn').addEventListener('click', fermerPopup);
-    overlay.addEventListener('click', function(e) { if (e.target === overlay) fermerPopup(); });
-    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') fermerPopup(); });
-
-  } else {
-    // Popup déjà vu → bandeau directement
-    afficherBandeau();
+  .presentation-hero h1,
+  .schools-banner h1,
+  .programs-banner h1,
+  .adm-banner h1,
+  .contact-banner h1{
+    font-size:24px!important;
   }
+}
+</style>
 
-})();
+</head>
+<body>
+<header class="header">
+  <a href="index.html" class="brand"><img src="assets/logo.png" alt="Logo Mihyarou Souna"></a>
+  <button class="menu" aria-label="Ouvrir le menu">☰</button>
+  <nav class="nav">
+    <a  href="index.html">Accueil</a>
+    <a  href="apropos.html">À propos</a>
+    <a  href="ecoles.html">Nos écoles</a>
+    <a  href="programmes.html">Programmes</a>
+    <a class="active" href="admissions.html">Admissions & Modalités</a>
+    <a  href="contact.html">Contact</a>
+  </nav>
+  <a class="space-btn" href="portail/login.html">
+    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+    Parents / Professeurs
+  </a>
+</header>
+
+<main class="adm-page">
+<section class="adm-hero"><div class="adm-banner">
+<h1>Admissions & Modalités</h1>
+<p>Une page compacte pour consulter les dossiers à fournir, les conditions d’inscription, les options et les frais de scolarité 2026–2027 des sites Parcelles Assainies, Keur Massar et de l’Internat Al Bayan.</p>
+</div></section>
+
+<section class="adm-wrap">
+<div class="adm-tabs"><span class="adm-tab">2026–2027</span><span class="adm-tab">Parcelles Assainies</span><span class="adm-tab">Keur Massar</span><span class="adm-tab">Internat Al Bayan</span></div>
+
+<div class="adm-grid">
+<div class="adm-card"><h2>📁 Dossiers à fournir</h2>
+<h3>Préscolaire – Élémentaire</h3><ul><li>Certificat de scolarité pour les nouveaux élèves ;</li><li>01 extrait de naissance.</li></ul>
+<h3>Moyen – Secondaire</h3><ul><li>01 certificat de scolarité pour les nouveaux élèves ;</li><li>01 extrait de naissance ;</li><li>Le dernier bulletin de notes.</li></ul></div>
+
+<div class="adm-card adm-note"><h2>⚠️ Notes importantes</h2>
+<ul><li>Les droits d’inscription ne sont pas remboursables.</li><li>À partir de plus de quatre enfants d’une même famille inscrits à l’établissement, une exonération de mensualité peut être accordée selon les conditions de l’administration ; l’inscription reste obligatoire.</li><li>L’uniforme fait partie des frais de scolarité.</li></ul>
+<div class="adm-badges"><span class="adm-badge">Cantine</span><span class="adm-badge">Transport : 10.000 F</span><span class="adm-badge">Karaté</span><span class="adm-badge">Informatique</span></div></div>
+</div>
+
+<div class="adm-grid">
+<div class="adm-card"><h2>🏫 Parcelles Assainies</h2><p><strong>Adresse :</strong> Unité 17 N°288 – Dakar</p><p>École franco-arabe du cycle élémentaire, du CI au CM2, dans un cadre moderne et accessible.</p><div class="adm-badges"><span class="adm-badge">CI</span><span class="adm-badge">CP</span><span class="adm-badge">CE1</span><span class="adm-badge">CE2</span><span class="adm-badge">CM1</span><span class="adm-badge">CM2</span></div></div>
+<div class="adm-card"><h2>🏫 Keur Massar</h2><p><strong>Adresse :</strong> Aïnoumady / Quartier Ainoumady N°135 – Keur Massar – Dakar</p><p>Site complet : garderie, préscolaire, élémentaire, moyen jusqu’à la 3ème BFEM, avec Internat Al Bayan intégré.</p><div class="adm-badges"><span class="adm-badge">Garderie</span><span class="adm-badge">Préscolaire</span><span class="adm-badge">CI–CM2</span><span class="adm-badge">6e–3e</span><span class="adm-badge">Internat</span></div></div>
+</div>
+
+<div class="adm-table-card"><h2>💰 Modalités 2026–2027 — Keur Massar</h2><div class="table-scroll"><table class="adm-table"><thead><tr><th>Classe</th><th>Inscription</th><th>Mensualité</th><th>Période</th><th>Horaires</th></tr></thead><tbody>
+<tr><td><strong>Garderie</strong><br><span class="adm-mini">01 à 2½ ans</span></td><td>30.000 F</td><td>15.000 F</td><td>Octobre à Mai</td><td>Lun–Ven 08h–18h</td></tr>
+<tr><td><strong>Préscolaire</strong><br><span class="adm-mini">2½ à 05 ans</span></td><td>30.000 F</td><td>9.000 F</td><td>Octobre à Mai</td><td>Lun–Jeu 08h–14h / Ven 08h–13h</td></tr>
+<tr><td><strong>CI – CP</strong></td><td>32.000 F</td><td>11.000 F</td><td>Octobre à Mai</td><td>08h–14h / 16h–18h, Lun–Ven</td></tr>
+<tr><td><strong>CE1 – CE2</strong></td><td>34.000 F</td><td>12.000 F</td><td>Octobre à Mai</td><td>08h–14h / 16h–18h, Lun–Ven</td></tr>
+<tr><td><strong>CM1</strong></td><td>36.000 F</td><td>13.000 F</td><td>Octobre à Mai</td><td>08h–14h / 16h–18h, Lun–Ven</td></tr>
+<tr><td><strong>CM2</strong></td><td>38.000 F</td><td>14.000 F</td><td>Octobre à Mai</td><td>08h–14h / 16h–18h, Lun–Ven</td></tr>
+<tr><td><strong>6ème / 5ème</strong></td><td>38.000 F</td><td>14.000 F</td><td>Octobre à Mai</td><td>08h–18h Lun–Ven / Sam 08h–14h</td></tr>
+<tr><td><strong>4ème</strong></td><td>40.000 F</td><td>15.000 F</td><td>Octobre à Mai</td><td>08h–18h Lun–Ven / Sam 08h–14h</td></tr>
+<tr><td><strong>3ème</strong></td><td>42.000 F</td><td>16.000 F</td><td>Octobre à Mai</td><td>08h–18h Lun–Ven / Sam 08h–14h</td></tr>
+</tbody></table></div></div>
+
+<div class="adm-grid">
+<div class="adm-card"><h2>🏠 Internat Al Bayan</h2><p>Internat moderne intégré au complexe de Keur Massar pour l’accueil, l’encadrement et le suivi des pensionnaires.</p><ul><li>Cadre sécurisé et organisé ;</li><li>Études surveillées ;</li><li>Encadrement religieux et moral ;</li><li>Accompagnement des élèves venant de différentes localités.</li></ul></div>
+<div class="adm-card"><h2>📞 Contacts inscriptions</h2><p><strong>Téléphones :</strong><br>33 878 27 42 • 77 157 90 06 • 77 200 95 15</p><p><strong>Emails :</strong><br>mihyaroufa@gmail.com • kerou66@gmail.com</p><p><strong>Devise :</strong> Discipline • Travail • Réussite</p></div>
+</div>
+
+<div class="adm-cta"><div><h2>Préparer l’inscription</h2><p>Rassemblez les pièces demandées puis contactez l’administration pour confirmer la disponibilité des places et les modalités du site choisi.</p></div><a href="contact.html">Contacter l’école</a></div>
+</section></main>
+
+
+<script src="js/script.js"></script>
+
+
+
+
+
+
+<style>
+.ms-footer{width:100%;background:linear-gradient(90deg,#075e57,#0b7a74);border-top:3px solid #d79a12;color:#fff;font-family:inherit}
+.ms-footer *{box-sizing:border-box}
+.ms-footer-wrap{max-width:1600px;margin:auto;padding:10px 2px;display:grid;grid-template-columns:minmax(330px,1fr) auto minmax(330px,1fr);align-items:center;gap:24px}
+.ms-footer-brand{display:flex;align-items:center;gap:12px;justify-self:start;padding-left:0;margin-left:-35px}
+.ms-footer-logo{width:52px;height:52px;border-radius:12px;background:#fff;object-fit:contain;padding:4px;box-shadow:0 6px 16px rgba(0,0,0,.12)}
+.ms-footer-title{font-size:18px;line-height:1;font-weight:800;margin-bottom:4px}
+.ms-footer-slogan{font-size:12px;font-weight:700;margin-bottom:5px;opacity:.95}
+.ms-footer-contact{font-size:12px;line-height:1.35;opacity:.95}
+.ms-footer-nav{display:flex;align-items:center;justify-content:center;gap:18px;white-space:nowrap}
+.ms-footer-nav a{color:#fff;text-decoration:none;font-size:13px;font-weight:800;transition:.2s}
+.ms-footer-nav a:hover{color:#f0b22c}
+.ms-footer-right{justify-self:end;display:flex;align-items:center;gap:10px;flex-wrap:nowrap}
+.ms-footer-newsletter{display:flex;align-items:center;gap:8px}
+.ms-footer-newsletter input{height:34px;width:145px;border:0;border-radius:999px;padding:0 14px;font-size:12px;outline:none}
+.ms-footer-newsletter button{height:34px;border:0;border-radius:999px;padding:0 15px;background:#d79a12;color:#fff;font-size:12px;font-weight:800;cursor:pointer;box-shadow:0 5px 12px rgba(0,0,0,.12)}
+.ms-footer-socials{display:flex;align-items:center;gap:7px}
+.ms-footer-socials a{position:relative;width:34px;height:34px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08);font-weight:800;transition:.2s}
+.ms-footer-socials a:hover{transform:translateY(-2px);border-color:#d79a12;box-shadow:0 0 0 3px rgba(215,154,18,.22)}
+.ms-footer-socials a::after{content:attr(aria-label);position:absolute;bottom:42px;left:50%;transform:translateX(-50%);background:#062f2c;color:#fff;font-size:11px;font-weight:700;padding:5px 8px;border-radius:6px;white-space:nowrap;opacity:0;pointer-events:none;transition:.2s}
+.ms-footer-socials a:hover::after{opacity:1}
+.ms-footer-socials a.social-soon{opacity:.45;cursor:default;pointer-events:none;}
+.ms-footer-socials a.social-soon::before{content:"Bientôt";position:absolute;bottom:42px;left:50%;transform:translateX(-50%);background:#333;color:#fff;font-size:10px;font-weight:700;padding:4px 7px;border-radius:5px;white-space:nowrap;opacity:0;pointer-events:none;transition:.2s;}
+.ms-footer-socials a.social-soon:hover::before{opacity:1;}
+.ms-footer-copy{text-align:center;border-top:1px solid rgba(255,255,255,.12);padding:7px 12px;font-size:11px;opacity:.9}
+@media(max-width:1100px){.ms-footer-wrap{grid-template-columns:1fr;justify-items:center;text-align:center}.ms-footer-brand{justify-self:center}.ms-footer-right{justify-self:center;flex-wrap:wrap;justify-content:center}.ms-footer-nav{flex-wrap:wrap}.ms-footer-contact{text-align:left}}
+</style>
+
+<footer class="ms-footer" style="width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;">
+  <div class="ms-footer-wrap">
+    <div class="ms-footer-brand" style="justify-self:start;margin-left:0;">
+      <img class="ms-footer-logo" style="margin-top:-8px;" src="assets/logo.png" alt="Logo Mihyarou Souna">
+      <div style="padding-left:12px;padding-top:12px;display:flex;flex-direction:column;justify-content:center;">
+        <div class="ms-footer-title">Mihyarou Souna</div>
+        <div class="ms-footer-slogan">Discipline • Travail • Réussite</div>
+        <div class="ms-footer-contact">📍 Parcelles Assainies & Keur Massar<br>☎ 33 878 27 42 • 77 157 90 06<br>✉ mihyaroufa@gmail.com</div>
+      </div>
+    </div>
+
+    <nav class="ms-footer-nav" aria-label="Navigation pied de page">
+      <a href="../index.html">Accueil</a>
+      <a href="../ecoles.html">Nos écoles</a>
+      <a href="../programmes.html">Programmes</a>
+      <a href="../admissions.html">Admissions</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../portail/login.html">Portail</a>
+    </nav>
+
+    <div class="ms-footer-right">
+      <form class="ms-footer-newsletter" onsubmit="event.preventDefault();">
+        <input type="email" placeholder="Votre email" aria-label="Votre email">
+        <button type="submit">S’abonner</button>
+      </form>
+      <div class="ms-footer-socials">
+        <a href="https://www.facebook.com/profile.php?id=100045061854399" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+        <a href="#" aria-label="YouTube — Bientôt disponible" class="social-soon">▶</a>
+        <a href="#" aria-label="Instagram — Bientôt disponible" class="social-soon">◎</a>
+      </div>
+    </div>
+  </div>
+  <div class="ms-footer-copy">© 2026 Complexe Scolaire Privé Franco-Arabe Mihyarou Souna</div>
+</footer>
+
+<script src="js/annonce.js"></script>
+</body>
+</html>

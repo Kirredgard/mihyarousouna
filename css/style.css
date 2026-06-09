@@ -640,7 +640,7 @@ main { overflow: hidden; }
   .nav { display: none; flex-direction: column; align-items: flex-start; width: 100%; gap: 0; border-top: 1px solid var(--line); margin-top: 8px; }
   .nav.open { display: flex; }
   .nav a { padding: 11px 0; font-size: 14px; width: 100%; border-bottom: 1px solid #f0f0f0; }
-  .space-btn { margin-left: 0; width: 100%; justify-content: center; margin-top: 8px; }
+  .space-btn { display: none; }
   .hero { grid-template-columns: 1fr; }
   .hero-copy { padding: 32px 20px; }
   .hero h1 { font-size: 30px; }
@@ -677,7 +677,7 @@ main { overflow: hidden; }
   .nav { display: none; flex-direction: column; align-items: flex-start; width: 100%; gap: 0; border-top: 1px solid var(--line); margin-top: 6px; }
   .nav.open { display: flex; }
   .nav a { padding: 10px 0; font-size: 13.5px; width: 100%; border-bottom: 1px solid #f0f0f0; }
-  .space-btn { width: 100%; justify-content: center; margin-top: 6px; font-size: 12.5px; padding: 10px 12px; }
+  .space-btn { display: none; }
   .hero { grid-template-columns: 1fr; }
   .hero-copy { padding: 24px 14px 20px; }
   .hero h1 { font-size: 26px; line-height: 1.2; }
@@ -758,4 +758,30 @@ main { overflow: hidden; }
   .newsletter-form input { width: 100%; max-width: 220px; }
   .quick-contact-content { grid-template-columns: 1fr !important; padding: 18px 14px !important; }
   .contact-stats { grid-template-columns: 1fr 1fr !important; }
+}
+
+/* Lien Parents/Professeurs dans le menu hamburger mobile */
+@media (max-width: 767px) {
+  .nav-portail {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    font-size: 13.5px;
+    font-weight: 800;
+    color: #075e57;
+    border-top: 2px solid #eef2f2;
+    margin-top: 4px;
+    width: 100%;
+    border-bottom: none;
+  }
+  .nav-portail::before {
+    content: "👤";
+    margin-right: 8px;
+    font-size: 15px;
+  }
+}
+@media (max-width: 480px) {
+  .nav-portail {
+    font-size: 13px;
+  }
 }

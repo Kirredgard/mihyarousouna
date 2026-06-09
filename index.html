@@ -3,10 +3,158 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Admissions - Complexe Scolaire Privé Franco-Arabe Mihyarou Souna" />
-  <title>Admissions & Modalités - Mihyarou Souna</title>
+  <meta name="description" content="Accueil - Complexe Scolaire Privé Franco-Arabe Mihyarou Souna" />
+  <title>Accueil | Mihyarou Souna</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" href="assets/logo.png" type="image/png">
+
+<style>
+.quick-contact-premium{
+  position:relative;
+  margin:60px auto;
+  max-width:1400px;
+  min-height:380px;
+  border-radius:18px;
+  overflow:hidden;
+  background:
+    linear-gradient(90deg,rgba(5,83,77,.92),rgba(9,126,116,.78)),
+    url('assets/classroom.jpg'),
+    url('images/classroom.jpg'),
+    url('assets/school.jpg'),
+    url('images/school.jpg');
+  background-size:cover;
+  background-position:center;
+  box-shadow:0 18px 45px rgba(0,0,0,.10);
+}
+.quick-contact-premium::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 12% 18%, rgba(215,154,18,.28), transparent 28%),
+             radial-gradient(circle at 90% 90%, rgba(255,255,255,.13), transparent 35%);
+}
+.quick-contact-content{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:34px;
+  align-items:center;
+  padding:42px;
+}
+.section-kicker{
+  display:inline-block;
+  color:#f0b22c;
+  font-weight:800;
+  letter-spacing:.08em;
+  font-size:12px;
+  margin-bottom:10px;
+}
+.quick-contact-left h2{
+  color:#fff;
+  font-size:34px;
+  line-height:1.15;
+  margin:0 0 14px;
+}
+.quick-contact-left p{
+  color:rgba(255,255,255,.92);
+  max-width:620px;
+  line-height:1.7;
+  margin:0 0 24px;
+}
+.contact-stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+}
+.stat-card{
+  background:rgba(255,255,255,.13);
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:14px;
+  padding:18px 12px;
+  text-align:center;
+  backdrop-filter:blur(8px);
+}
+.stat-card strong{
+  display:block;
+  color:#fff;
+  font-size:24px;
+  font-weight:900;
+  margin-bottom:5px;
+}
+.stat-card span{
+  color:#fff;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.04em;
+}
+.quick-contact-card{
+  background:#fff;
+  border-radius:18px;
+  padding:28px;
+  border-top:5px solid #d79a12;
+  box-shadow:0 14px 34px rgba(0,0,0,.14);
+}
+.quick-contact-card h3{
+  color:#075e57;
+  font-size:26px;
+  margin:0 0 18px;
+}
+.contact-line{
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+  padding:11px 0;
+  color:#10233f;
+  border-bottom:1px solid #edf1f1;
+  line-height:1.45;
+}
+.contact-line span{
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#f5faf9;
+  color:#075e57;
+  flex:0 0 32px;
+}
+.contact-line b{color:#075e57}
+.contact-actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+.contact-actions a{
+  text-decoration:none;
+  padding:12px 18px;
+  border-radius:999px;
+  font-weight:800;
+  font-size:13px;
+}
+.contact-actions a:first-child{
+  background:#d79a12;
+  color:#fff;
+}
+.contact-actions a:last-child{
+  background:#075e57;
+  color:#fff;
+}
+@media(max-width:767px){
+  .quick-contact-content{grid-template-columns:1fr;padding:24px}
+  .contact-stats{grid-template-columns:repeat(2,1fr)}
+  .quick-contact-left h2{font-size:26px}
+}
+@media(max-width:480px){
+  .quick-contact-content{grid-template-columns:1fr;padding:16px 12px}
+  .contact-stats{grid-template-columns:repeat(2,1fr)}
+  .quick-contact-left h2{font-size:22px}
+  .quick-contact-premium{margin:24px 12px;border-radius:14px}
+}
+</style>
+
 
 <style>
 .portal-btn-adjust{
@@ -180,154 +328,17 @@ line-height:1;
 }
 </style>
 
-
-<style>
-.adm-page{background:#f7faf9;color:#10233f}
-.adm-hero,.adm-wrap{max-width:1400px;margin:35px auto 0;padding:0 24px}
-.adm-banner{background:linear-gradient(135deg,#075e57,#0b7a74);color:#fff;border-radius:22px;padding:36px 40px;box-shadow:0 14px 34px rgba(7,94,87,.12)}
-.adm-banner h1{font-size:34px;margin:0 0 10px}
-.adm-banner p{margin:0;line-height:1.6;max-width:980px;font-size:15px}
-.adm-wrap{margin-top:0;margin-bottom:70px}
-.adm-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px}
-.adm-card,.adm-table-card{background:#fff;border-radius:18px;padding:20px;box-shadow:0 8px 22px rgba(16,35,63,.06);border:1px solid rgba(7,94,87,.07)}
-.adm-card h2,.adm-table-card h2{color:#075e57;margin:0 0 12px;font-size:21px}
-.adm-card h3{color:#075e57;margin:14px 0 8px;font-size:16px}
-.adm-card p,.adm-card li{font-size:14px;line-height:1.5}
-.adm-card ul{margin:0;padding-left:18px}
-.adm-note{background:#fff8e8;border-left:5px solid #d79a12}
-.adm-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-.adm-badge{background:#eef8f6;color:#075e57;border-radius:999px;padding:7px 10px;font-size:12px;font-weight:800}
-.adm-tabs{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 10px}
-.adm-tab{background:#075e57;color:white;border-radius:999px;padding:8px 13px;font-weight:800;font-size:13px}
-.adm-table-card{margin-top:18px}
-.table-scroll{overflow:auto;border-radius:12px;border:1px solid #e5eeee}
-.adm-table{width:100%;border-collapse:collapse;min-width:820px;font-size:13px}
-.adm-table th{background:#075e57;color:#fff;padding:10px;text-align:left}
-.adm-table td{padding:9px 10px;border-bottom:1px solid #edf1f1;vertical-align:top}
-.adm-table tr:nth-child(even){background:#f9fcfb}
-.adm-table strong{color:#075e57}
-.adm-mini{font-size:12px;color:#486174}
-.adm-cta{margin-top:22px;background:linear-gradient(135deg,#075e57,#0b7a74);color:white;border-radius:18px;padding:24px;display:flex;align-items:center;justify-content:space-between;gap:14px}
-.adm-cta h2{margin:0 0 6px;color:#fff;font-size:22px}
-.adm-cta p{margin:0;font-size:14px;line-height:1.5}
-.adm-cta a{background:#d79a12;color:#fff;text-decoration:none;border-radius:999px;padding:11px 16px;font-weight:900;white-space:nowrap}
-@media(max-width:767px){.adm-grid{grid-template-columns:1fr}.adm-banner{padding:28px 20px}.adm-cta{flex-direction:column;align-items:flex-start}}
-</style>
-
-
-<style>
-/* Hero uniforme compact type page Contact */
-.uniform-page-hero,
-.presentation-hero-inner,
-.schools-banner,
-.programs-banner,
-.adm-banner,
-.contact-banner{
-  background:linear-gradient(135deg,#075e57,#0b7a74)!important;
-  color:#fff!important;
-  border-radius:22px!important;
-  padding:36px 40px!important;
-  box-shadow:0 14px 34px rgba(7,94,87,.12)!important;
-}
-
-.presentation-hero,
-.schools-hero,
-.programs-hero,
-.adm-hero,
-.contact-hero{
-  max-width:1400px!important;
-  margin:35px auto 0!important;
-  padding:0 24px!important;
-}
-
-.presentation-kicker,
-.contact-badge,
-.uniform-hero-badge{
-  display:inline-block!important;
-  background:#d79a12!important;
-  color:#fff!important;
-  border-radius:999px!important;
-  padding:6px 12px!important;
-  font-size:12px!important;
-  font-weight:900!important;
-  letter-spacing:0!important;
-  text-transform:none!important;
-  margin-bottom:12px!important;
-}
-
-.presentation-hero h1,
-.schools-banner h1,
-.programs-banner h1,
-.adm-banner h1,
-.contact-banner h1{
-  font-size:28px!important;
-  line-height:1.22!important;
-  margin:0 0 14px!important;
-  color:#fff!important;
-}
-
-.presentation-hero p,
-.schools-banner p,
-.programs-banner p,
-.adm-banner p,
-.contact-banner p{
-  font-size:14px!important;
-  line-height:1.55!important;
-  max-width:850px!important;
-  margin:0!important;
-  color:#fff!important;
-}
-
-.founder-card{
-  transform:scale(.88)!important;
-  transform-origin:center!important;
-}
-.founder-card img,
-.founder-photo{
-  width:105px!important;
-  height:105px!important;
-  object-fit:cover!important;
-  object-position:center 15%!important;
-  border-radius:50%!important;
-  border:3px solid #d79a12!important;
-  box-shadow:0 6px 14px rgba(0,0,0,.10)!important;
-}
-.founder-name{
-  font-size:14px!important;
-  margin-top:7px!important;
-}
-.founder-role{
-  font-size:12px!important;
-}
-@media(max-width:767px){
-  .presentation-hero-inner,
-  .schools-banner,
-  .programs-banner,
-  .adm-banner,
-  .contact-banner{
-    padding:28px 24px!important;
-  }
-  .presentation-hero h1,
-  .schools-banner h1,
-  .programs-banner h1,
-  .adm-banner h1,
-  .contact-banner h1{
-    font-size:24px!important;
-  }
-}
-</style>
-
 </head>
 <body>
 <header class="header">
   <a href="index.html" class="brand"><img src="assets/logo.png" alt="Logo Mihyarou Souna"></a>
   <button class="menu" aria-label="Ouvrir le menu">☰</button>
   <nav class="nav">
-    <a  href="index.html">Accueil</a>
+    <a class="active" href="index.html">Accueil</a>
     <a  href="apropos.html">À propos</a>
     <a  href="ecoles.html">Nos écoles</a>
     <a  href="programmes.html">Programmes</a>
-    <a class="active" href="admissions.html">Admissions & Modalités</a>
+    <a  href="admissions.html">Admissions & Modalités</a>
     <a  href="contact.html">Contact</a>
   </nav>
   <a class="space-btn" href="portail/login.html">
@@ -335,51 +346,23 @@ line-height:1;
     Parents / Professeurs
   </a>
 </header>
+<main>
+<section class="hero">
+  <div class="hero-copy">
+    <p class="welcome">BIENVENUE AU</p>
+    <h1>Complexe Scolaire Privé<br><span>Franco-Arabe</span> <strong>Mihyarou Souna</strong></h1>
+    <p class="lead">Un réseau éducatif franco-arabe qui accompagne les enfants de la crèche au collège, avec un enseignement équilibré entre programme français, langue arabe, Coran et valeurs islamiques.</p>
+    <div class="actions"><a href="ecoles.html" class="btn primary">Découvrir nos écoles</a><a href="admissions.html" class="btn outline">Admissions & Modalités</a></div>
+    <div class="mini-row"><div><div class="mini-icon">📍</div><div class="mini-text"><b>Parcelles & Keur Massar</b><small>Deux écoles franco-arabes à Dakar</small></div></div><div><div class="mini-icon">🕌</div><div class="mini-text"><b>Dara moderne</b><small>Internat franco-arabe avec encadrement</small></div></div><div><div class="mini-icon">🎓</div><div class="mini-text"><b>Discipline • Travail • Réussite</b><small>Une devise au cœur du projet éducatif</small></div></div></div>
+  </div>
+  <div class="hero-photo"><img src="assets/hero-school.png" alt="Élèves sénégalais devant l'école"></div>
+</section><section class="pillars"><article class="card pillar"><span class="round">🏫</span><div><h3>Nos écoles</h3><p>Parcelles Assainies et Keur Massar, avec des niveaux adaptés aux familles.</p></div><a class="badge" href="ecoles.html">→</a></article><article class="card pillar"><span class="round arabic">ض</span><div><h3>Programmes</h3><p>Français, arabe, Coran, valeurs islamiques et activités complémentaires.</p></div><a class="badge" href="programmes.html">→</a></article><article class="card pillar"><span class="round gold">📝</span><div><h3>Admissions</h3><p>Dossiers, modalités et informations d’inscription 2026–2027.</p></div><a class="badge" href="admissions.html">→</a></article></section>
+<section class="content-grid" style="padding-top:35px"><article class="mission"><p>NOTRE MISSION</p><h2>Former les cœurs et les esprits</h2><span>Mihyarou Souna propose une éducation complète qui unit réussite scolaire, maîtrise de l’arabe, apprentissage religieux et encadrement bienveillant.</span><a class="gold-btn" href="contact.html">Nous contacter →</a></article><article class="photo-card"><img src="assets/classroom.png" alt="Élèves en classe"><div class="stat-row"><div><b>🏫 2 écoles</b><small>Parcelles Assainies et Keur Massar</small></div><div><b>🧒 Crèche à 3ème</b><small>Selon le site choisi</small></div><div><b>🛏️ Internat</b><small>Dara moderne franco-arabe</small></div></div></article><article class="why"><h2>POURQUOI NOUS CHOISIR ?</h2><ul><li><span class="why-check">✓</span><div><b>Double compétence</b><span>Français et arabe dans un même parcours.</span></div></li><li><span class="why-check">✓</span><div><b>Encadrement rigoureux</b><span>Discipline, suivi et accompagnement des élèves.</span></div></li><li><span class="why-check">✓</span><div><b>Valeurs islamiques</b><span>Respect, responsabilité et éducation morale.</span></div></li></ul></article></section>
 
-<main class="adm-page">
-<section class="adm-hero"><div class="adm-banner">
-<h1>Admissions & Modalités</h1>
-<p>Une page compacte pour consulter les dossiers à fournir, les conditions d’inscription, les options et les frais de scolarité 2026–2027 des sites Parcelles Assainies, Keur Massar et de l’Internat Al Bayan.</p>
-</div></section>
 
-<section class="adm-wrap">
-<div class="adm-tabs"><span class="adm-tab">2026–2027</span><span class="adm-tab">Parcelles Assainies</span><span class="adm-tab">Keur Massar</span><span class="adm-tab">Internat Al Bayan</span></div>
 
-<div class="adm-grid">
-<div class="adm-card"><h2>📁 Dossiers à fournir</h2>
-<h3>Préscolaire – Élémentaire</h3><ul><li>Certificat de scolarité pour les nouveaux élèves ;</li><li>01 extrait de naissance.</li></ul>
-<h3>Moyen – Secondaire</h3><ul><li>01 certificat de scolarité pour les nouveaux élèves ;</li><li>01 extrait de naissance ;</li><li>Le dernier bulletin de notes.</li></ul></div>
 
-<div class="adm-card adm-note"><h2>⚠️ Notes importantes</h2>
-<ul><li>Les droits d’inscription ne sont pas remboursables.</li><li>À partir de plus de quatre enfants d’une même famille inscrits à l’établissement, une exonération de mensualité peut être accordée selon les conditions de l’administration ; l’inscription reste obligatoire.</li><li>L’uniforme fait partie des frais de scolarité.</li></ul>
-<div class="adm-badges"><span class="adm-badge">Cantine</span><span class="adm-badge">Transport : 10.000 F</span><span class="adm-badge">Karaté</span><span class="adm-badge">Informatique</span></div></div>
-</div>
-
-<div class="adm-grid">
-<div class="adm-card"><h2>🏫 Parcelles Assainies</h2><p><strong>Adresse :</strong> Unité 17 N°288 – Dakar</p><p>École franco-arabe du cycle élémentaire, du CI au CM2, dans un cadre moderne et accessible.</p><div class="adm-badges"><span class="adm-badge">CI</span><span class="adm-badge">CP</span><span class="adm-badge">CE1</span><span class="adm-badge">CE2</span><span class="adm-badge">CM1</span><span class="adm-badge">CM2</span></div></div>
-<div class="adm-card"><h2>🏫 Keur Massar</h2><p><strong>Adresse :</strong> Aïnoumady / Quartier Ainoumady N°135 – Keur Massar – Dakar</p><p>Site complet : garderie, préscolaire, élémentaire, moyen jusqu’à la 3ème BFEM, avec Internat Al Bayan intégré.</p><div class="adm-badges"><span class="adm-badge">Garderie</span><span class="adm-badge">Préscolaire</span><span class="adm-badge">CI–CM2</span><span class="adm-badge">6e–3e</span><span class="adm-badge">Internat</span></div></div>
-</div>
-
-<div class="adm-table-card"><h2>💰 Modalités 2026–2027 — Keur Massar</h2><div class="table-scroll"><table class="adm-table"><thead><tr><th>Classe</th><th>Inscription</th><th>Mensualité</th><th>Période</th><th>Horaires</th></tr></thead><tbody>
-<tr><td><strong>Garderie</strong><br><span class="adm-mini">01 à 2½ ans</span></td><td>30.000 F</td><td>15.000 F</td><td>Octobre à Mai</td><td>Lun–Ven 08h–18h</td></tr>
-<tr><td><strong>Préscolaire</strong><br><span class="adm-mini">2½ à 05 ans</span></td><td>30.000 F</td><td>9.000 F</td><td>Octobre à Mai</td><td>Lun–Jeu 08h–14h / Ven 08h–13h</td></tr>
-<tr><td><strong>CI – CP</strong></td><td>32.000 F</td><td>11.000 F</td><td>Octobre à Mai</td><td>08h–14h / 16h–18h, Lun–Ven</td></tr>
-<tr><td><strong>CE1 – CE2</strong></td><td>34.000 F</td><td>12.000 F</td><td>Octobre à Mai</td><td>08h–14h / 16h–18h, Lun–Ven</td></tr>
-<tr><td><strong>CM1</strong></td><td>36.000 F</td><td>13.000 F</td><td>Octobre à Mai</td><td>08h–14h / 16h–18h, Lun–Ven</td></tr>
-<tr><td><strong>CM2</strong></td><td>38.000 F</td><td>14.000 F</td><td>Octobre à Mai</td><td>08h–14h / 16h–18h, Lun–Ven</td></tr>
-<tr><td><strong>6ème / 5ème</strong></td><td>38.000 F</td><td>14.000 F</td><td>Octobre à Mai</td><td>08h–18h Lun–Ven / Sam 08h–14h</td></tr>
-<tr><td><strong>4ème</strong></td><td>40.000 F</td><td>15.000 F</td><td>Octobre à Mai</td><td>08h–18h Lun–Ven / Sam 08h–14h</td></tr>
-<tr><td><strong>3ème</strong></td><td>42.000 F</td><td>16.000 F</td><td>Octobre à Mai</td><td>08h–18h Lun–Ven / Sam 08h–14h</td></tr>
-</tbody></table></div></div>
-
-<div class="adm-grid">
-<div class="adm-card"><h2>🏠 Internat Al Bayan</h2><p>Internat moderne intégré au complexe de Keur Massar pour l’accueil, l’encadrement et le suivi des pensionnaires.</p><ul><li>Cadre sécurisé et organisé ;</li><li>Études surveillées ;</li><li>Encadrement religieux et moral ;</li><li>Accompagnement des élèves venant de différentes localités.</li></ul></div>
-<div class="adm-card"><h2>📞 Contacts inscriptions</h2><p><strong>Téléphones :</strong><br>33 878 27 42 • 77 157 90 06 • 77 200 95 15</p><p><strong>Emails :</strong><br>mihyaroufa@gmail.com • kerou66@gmail.com</p><p><strong>Devise :</strong> Discipline • Travail • Réussite</p></div>
-</div>
-
-<div class="adm-cta"><div><h2>Préparer l’inscription</h2><p>Rassemblez les pièces demandées puis contactez l’administration pour confirmer la disponibilité des places et les modalités du site choisi.</p></div><a href="contact.html">Contacter l’école</a></div>
-</section></main>
-
+</main>
 
 <script src="js/script.js"></script>
 
@@ -449,6 +432,8 @@ line-height:1;
     </div>
   </div>
   <div class="ms-footer-copy">© 2026 Complexe Scolaire Privé Franco-Arabe Mihyarou Souna</div>
+
+
 </footer>
 
 <script src="js/annonce.js"></script>
