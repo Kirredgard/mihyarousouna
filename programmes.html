@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Programmes - Complexe Scolaire Privé Franco-Arabe Mihyarou Souna" />
+  <title>Programmes | Mihyarou Souna</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="assets/logo.png" type="image/png">
+
+<style>
+.portal-btn-adjust{
+    margin-right:24px !important;
+}
+</style>
+
+
+<style>
+/* Fix définitif : logo du header contenu dans la hauteur de la barre */
+header img,
+.navbar img,
+.site-header img,
+.header img,
+.logo img,
+.brand img{
+  max-height:72px !important;
+  width:auto !important;
+  object-fit:contain !important;
+  display:block !important;
+}
+
+header,
+.navbar,
+.site-header,
+.header{
+  min-height:80px !important;
+  overflow:hidden !important;
+  display:flex !important;
+  align-items:center !important;
+}
+
+.logo,
+.brand,
+.navbar-brand{
+  height:72px !important;
+  display:flex !important;
+  align-items:center !important;
+  overflow:hidden !important;
+}
+</style>
+
+
+<style>
+/* Footer toujours en bas de page sur les pages courtes */
+html, body{
+  min-height:100%;
+}
+body{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+main, .main, .page-content, .content{
+  flex:1 0 auto;
+}
+footer, .ms-footer{
+  margin-top:auto !important;
+  flex-shrink:0;
+}
+</style>
+
+
+<style>
+.programs-page{background:#f7faf9}
+.programs-hero{max-width:1400px;margin:35px auto;padding:0 24px}
+.programs-banner{background:linear-gradient(135deg,#075e57,#0b7a74);color:white;padding:45px;border-radius:22px}
+.programs-banner h1{font-size:38px;margin:0 0 10px}
+.programs-wrap{max-width:1400px;margin:0 auto 60px;padding:0 24px}
+.program-card{background:white;padding:30px;border-radius:18px;box-shadow:0 10px 28px rgba(0,0,0,.06);margin-top:24px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin:25px 0}
+.stat{background:#fff;padding:20px;border-radius:16px;text-align:center;box-shadow:0 8px 22px rgba(0,0,0,.06)}
+.stat strong{display:block;color:#075e57;font-size:28px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.highlight{background:#eef8f6;border-left:5px solid #d4a017}
+.cta{background:linear-gradient(135deg,#075e57,#0b7a74);color:#fff;padding:35px;border-radius:18px;text-align:center;margin-top:30px}
+</style>
+
+<style>
+.flag-circle{
+display:inline-flex;
+width:34px;
+height:34px;
+border-radius:50%;
+overflow:hidden;
+vertical-align:middle;
+margin-right:10px;
+box-shadow:0 2px 8px rgba(0,0,0,.15);
+border:2px solid #fff;
+}
+.flag-circle span{
+flex:1;
+height:100%;
+}
+.flag-green{background:#00853F;}
+.flag-yellow{background:#FDEF42;}
+.flag-red{background:#E31B23;}
+.program-title-flex{display:flex;align-items:center;gap:10px;}
+</style>
+
+
+<style>
+.program-title-flex{
+display:flex!important;
+align-items:center!important;
+gap:14px;
+margin-bottom:8px;
+}
+.flag-circle{
+width:34px;height:34px;border-radius:50%;
+overflow:hidden;display:flex;position:relative;
+box-shadow:0 2px 8px rgba(0,0,0,.15);
+flex-shrink:0;
+}
+.flag-green,.flag-yellow,.flag-red{flex:1;height:100%;}
+.flag-green{background:#00853F;}
+.flag-yellow{background:#FDEF42;}
+.flag-red{background:#E31B23;}
+.flag-star{
+position:absolute;
+left:50%;
+top:50%;
+transform:translate(-50%,-50%);
+color:#00853F;
+font-size:12px;
+font-weight:900;
+line-height:1;
+}
+</style>
+
+<style>
+/* Corrections réelles Programmes + Nos Écoles */
+.program-title-clean{
+  display:flex!important;
+  align-items:center!important;
+  gap:14px!important;
+  margin:0 0 18px!important;
+  font-size:24px!important;
+  font-weight:900!important;
+  color:#00152e!important;
+}
+.sn-flag-round{
+  width:34px!important;
+  height:34px!important;
+  border-radius:50%!important;
+  overflow:hidden!important;
+  display:inline-flex!important;
+  position:relative!important;
+  flex-shrink:0!important;
+  box-shadow:0 2px 8px rgba(0,0,0,.18)!important;
+  border:2px solid #fff!important;
+}
+.sn-flag-round .green{background:#00853F;flex:1;height:100%;}
+.sn-flag-round .yellow{background:#FDEF42;flex:1;height:100%;}
+.sn-flag-round .red{background:#E31B23;flex:1;height:100%;}
+.sn-flag-round .star{
+  position:absolute!important;
+  left:50%!important;
+  top:50%!important;
+  transform:translate(-50%,-50%)!important;
+  color:#00853F!important;
+  font-size:11px!important;
+  font-weight:900!important;
+  line-height:1!important;
+}
+.schools-stats-restore{
+  display:grid!important;
+  grid-template-columns:repeat(4,1fr)!important;
+  gap:15px!important;
+  margin:25px 0!important;
+}
+.schools-stats-restore .stat{
+  background:#fff!important;
+  padding:20px!important;
+  border-radius:16px!important;
+  text-align:center!important;
+  box-shadow:0 8px 22px rgba(0,0,0,.06)!important;
+}
+.schools-stats-restore .stat strong{
+  display:block!important;
+  color:#075e57!important;
+  font-size:28px!important;
+}
+@media(max-width:767px){
+  .schools-stats-restore{grid-template-columns:repeat(2,1fr)!important;}
+}
+</style>
+
+
+<style>
+/* Hero uniforme compact type page Contact */
+.uniform-page-hero,
+.presentation-hero-inner,
+.schools-banner,
+.programs-banner,
+.adm-banner,
+.contact-banner{
+  background:linear-gradient(135deg,#075e57,#0b7a74)!important;
+  color:#fff!important;
+  border-radius:22px!important;
+  padding:36px 40px!important;
+  box-shadow:0 14px 34px rgba(7,94,87,.12)!important;
+}
+
+.presentation-hero,
+.schools-hero,
+.programs-hero,
+.adm-hero,
+.contact-hero{
+  max-width:1400px!important;
+  margin:35px auto 0!important;
+  padding:0 24px!important;
+}
+
+.presentation-kicker,
+.contact-badge,
+.uniform-hero-badge{
+  display:inline-block!important;
+  background:#d79a12!important;
+  color:#fff!important;
+  border-radius:999px!important;
+  padding:6px 12px!important;
+  font-size:12px!important;
+  font-weight:900!important;
+  letter-spacing:0!important;
+  text-transform:none!important;
+  margin-bottom:12px!important;
+}
+
+.presentation-hero h1,
+.schools-banner h1,
+.programs-banner h1,
+.adm-banner h1,
+.contact-banner h1{
+  font-size:28px!important;
+  line-height:1.22!important;
+  margin:0 0 14px!important;
+  color:#fff!important;
+}
+
+.presentation-hero p,
+.schools-banner p,
+.programs-banner p,
+.adm-banner p,
+.contact-banner p{
+  font-size:14px!important;
+  line-height:1.55!important;
+  max-width:850px!important;
+  margin:0!important;
+  color:#fff!important;
+}
+
+.founder-card{
+  transform:scale(.88)!important;
+  transform-origin:center!important;
+}
+.founder-card img,
+.founder-photo{
+  width:105px!important;
+  height:105px!important;
+  object-fit:cover!important;
+  object-position:center 15%!important;
+  border-radius:50%!important;
+  border:3px solid #d79a12!important;
+  box-shadow:0 6px 14px rgba(0,0,0,.10)!important;
+}
+.founder-name{
+  font-size:14px!important;
+  margin-top:7px!important;
+}
+.founder-role{
+  font-size:12px!important;
+}
+@media(max-width:767px){
+  .presentation-hero-inner,
+  .schools-banner,
+  .programs-banner,
+  .adm-banner,
+  .contact-banner{
+    padding:28px 24px!important;
+  }
+  .presentation-hero h1,
+  .schools-banner h1,
+  .programs-banner h1,
+  .adm-banner h1,
+  .contact-banner h1{
+    font-size:24px!important;
+  }
+}
+</style>
+
+</head>
+<body>
+<header class="header">
+  <a href="index.html" class="brand"><img src="assets/logo.png" alt="Logo Mihyarou Souna"></a>
+  <button class="menu" aria-label="Ouvrir le menu">☰</button>
+  <nav class="nav">
+    <a  href="index.html">Accueil</a>
+    <a  href="apropos.html">À propos</a>
+    <a  href="ecoles.html">Nos écoles</a>
+    <a class="active" href="programmes.html">Programmes</a>
+    <a  href="admissions.html">Admissions & Modalités</a>
+    <a  href="contact.html">Contact</a>
+  </nav>
+  <a class="space-btn" href="portail/login.html">
+    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+    Parents / Professeurs
+  </a>
+</header>
+
+<main class="programs-page">
+
+<section class="programs-hero">
+<div class="programs-banner">
+<h1>Nos Programmes Éducatifs</h1>
+<p>Une formation complète conforme au programme académique sénégalais et enrichie par l'enseignement de la langue arabe, du Saint Coran et de l'éducation islamique.</p>
+</div>
+</section>
+
+<section class="programs-wrap">
+
+<div class="program-card highlight">
+<div class="program-title-clean"><span class="sn-flag-round" aria-label="Drapeau du Sénégal"><span class="green"></span><span class="yellow"></span><span class="red"></span><span class="star">★</span></span><span>Programme académique sénégalais + Formation franco-arabe</span></div>
+<p>Au Complexe Scolaire Privé Franco-Arabe Mihyarou Souna, nos élèves suivent intégralement les programmes officiels définis par le Ministère de l'Éducation nationale du Sénégal.</p>
+<p>Notre établissement associe les exigences du système éducatif sénégalais à un enseignement approfondi de la langue arabe, du Saint Coran et de l'éducation islamique afin de former des élèves compétents, responsables et enracinés dans leurs valeurs.</p>
+</div>
+
+
+
+</div>
+
+<div class="grid">
+
+<div class="program-card">
+<h2>🧒 Préscolaire</h2>
+<p>Le cycle préscolaire favorise l'éveil, la socialisation et le développement harmonieux de l'enfant.</p>
+<ul>
+<li>Garderie</li>
+<li>Crèche</li>
+<li>Préscolaire</li>
+<li>Développement du langage</li>
+<li>Éveil intellectuel et motricité</li>
+</ul>
+</div>
+
+<div class="program-card">
+<h2>📚 Élémentaire (CI à CM2)</h2>
+<p>Acquisition progressive des compétences fondamentales nécessaires à la réussite scolaire.</p>
+<ul>
+<li>Français</li>
+<li>Mathématiques</li>
+<li>Sciences</li>
+<li>Histoire-Géographie</li>
+<li>Arabe</li>
+<li>Coran</li>
+</ul>
+</div>
+
+</div>
+
+<div class="program-card">
+<h2>🎓 Cycle Moyen (6ème à 3ème)</h2>
+<p>Préparation aux examens nationaux et aux études secondaires.</p>
+<ul>
+<li>Français</li>
+<li>Mathématiques</li>
+<li>Sciences Physiques</li>
+<li>SVT</li>
+<li>Anglais</li>
+<li>Histoire-Géographie</li>
+<li>Arabe et Éducation islamique</li>
+<li>Préparation au BFEM</li>
+</ul>
+</div>
+
+<div class="grid">
+
+<div class="program-card">
+<h2>📖 Enseignement Franco-Arabe</h2>
+<ul>
+<li>Lecture et écriture arabe</li>
+<li>Expression orale</li>
+<li>Compréhension de textes</li>
+<li>Saint Coran</li>
+<li>Tajwid</li>
+<li>Hadith</li>
+<li>Fiqh et Akhlaq</li>
+</ul>
+</div>
+
+<div class="program-card">
+<h2>⚽ Activités Complémentaires</h2>
+<ul>
+<li>Informatique</li>
+<li>Karaté</li>
+<li>Activités culturelles</li>
+<li>Activités religieuses</li>
+<li>Sorties pédagogiques</li>
+</ul>
+</div>
+
+</div>
+
+<div class="program-card">
+<h2>🚍 Services proposés</h2>
+<ul>
+<li>Transport scolaire</li>
+<li>Cantine</li>
+<li>Encadrement pédagogique</li>
+<li>Internat Al Bayan</li>
+<li>Études surveillées</li>
+</ul>
+</div>
+
+<div class="cta">
+<h2>Discipline • Travail • Réussite</h2>
+<p>Former des élèves capables de réussir dans le système éducatif sénégalais tout en maîtrisant la langue arabe et les valeurs islamiques.</p>
+</div>
+
+</section>
+</main>
+
+
+<script src="js/script.js"></script>
+
+
+
+
+
+
+<style>
+.ms-footer{width:100%;background:linear-gradient(90deg,#075e57,#0b7a74);border-top:3px solid #d79a12;color:#fff;font-family:inherit}
+.ms-footer *{box-sizing:border-box}
+.ms-footer-wrap{max-width:1600px;margin:auto;padding:10px 2px;display:grid;grid-template-columns:minmax(330px,1fr) auto minmax(330px,1fr);align-items:center;gap:24px}
+.ms-footer-brand{display:flex;align-items:center;gap:12px;justify-self:start;padding-left:0;margin-left:-35px}
+.ms-footer-logo{width:52px;height:52px;border-radius:12px;background:#fff;object-fit:contain;padding:4px;box-shadow:0 6px 16px rgba(0,0,0,.12)}
+.ms-footer-title{font-size:18px;line-height:1;font-weight:800;margin-bottom:4px}
+.ms-footer-slogan{font-size:12px;font-weight:700;margin-bottom:5px;opacity:.95}
+.ms-footer-contact{font-size:12px;line-height:1.35;opacity:.95}
+.ms-footer-nav{display:flex;align-items:center;justify-content:center;gap:18px;white-space:nowrap}
+.ms-footer-nav a{color:#fff;text-decoration:none;font-size:13px;font-weight:800;transition:.2s}
+.ms-footer-nav a:hover{color:#f0b22c}
+.ms-footer-right{justify-self:end;display:flex;align-items:center;gap:10px;flex-wrap:nowrap}
+.ms-footer-newsletter{display:flex;align-items:center;gap:8px}
+.ms-footer-newsletter input{height:34px;width:145px;border:0;border-radius:999px;padding:0 14px;font-size:12px;outline:none}
+.ms-footer-newsletter button{height:34px;border:0;border-radius:999px;padding:0 15px;background:#d79a12;color:#fff;font-size:12px;font-weight:800;cursor:pointer;box-shadow:0 5px 12px rgba(0,0,0,.12)}
+.ms-footer-socials{display:flex;align-items:center;gap:7px}
+.ms-footer-socials a{position:relative;width:34px;height:34px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08);font-weight:800;transition:.2s}
+.ms-footer-socials a:hover{transform:translateY(-2px);border-color:#d79a12;box-shadow:0 0 0 3px rgba(215,154,18,.22)}
+.ms-footer-socials a::after{content:attr(aria-label);position:absolute;bottom:42px;left:50%;transform:translateX(-50%);background:#062f2c;color:#fff;font-size:11px;font-weight:700;padding:5px 8px;border-radius:6px;white-space:nowrap;opacity:0;pointer-events:none;transition:.2s}
+.ms-footer-socials a:hover::after{opacity:1}
+.ms-footer-socials a.social-soon{opacity:.45;cursor:default;pointer-events:none;}
+.ms-footer-socials a.social-soon::before{content:"Bientôt";position:absolute;bottom:42px;left:50%;transform:translateX(-50%);background:#333;color:#fff;font-size:10px;font-weight:700;padding:4px 7px;border-radius:5px;white-space:nowrap;opacity:0;pointer-events:none;transition:.2s;}
+.ms-footer-socials a.social-soon:hover::before{opacity:1;}
+.ms-footer-copy{text-align:center;border-top:1px solid rgba(255,255,255,.12);padding:7px 12px;font-size:11px;opacity:.9}
+@media(max-width:1100px){.ms-footer-wrap{grid-template-columns:1fr;justify-items:center;text-align:center}.ms-footer-brand{justify-self:center}.ms-footer-right{justify-self:center;flex-wrap:wrap;justify-content:center}.ms-footer-nav{flex-wrap:wrap}.ms-footer-contact{text-align:left}}
+</style>
+
+<footer class="ms-footer" style="width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;">
+  <div class="ms-footer-wrap">
+    <div class="ms-footer-brand" style="justify-self:start;margin-left:0;">
+      <img class="ms-footer-logo" style="margin-top:-8px;" src="assets/logo.png" alt="Logo Mihyarou Souna">
+      <div style="padding-left:12px;padding-top:12px;display:flex;flex-direction:column;justify-content:center;">
+        <div class="ms-footer-title">Mihyarou Souna</div>
+        <div class="ms-footer-slogan">Discipline • Travail • Réussite</div>
+        <div class="ms-footer-contact">📍 Parcelles Assainies & Keur Massar<br>☎ 33 878 27 42 • 77 157 90 06<br>✉ mihyaroufa@gmail.com</div>
+      </div>
+    </div>
+
+    <nav class="ms-footer-nav" aria-label="Navigation pied de page">
+      <a href="../index.html">Accueil</a>
+      <a href="../ecoles.html">Nos écoles</a>
+      <a href="../programmes.html">Programmes</a>
+      <a href="../admissions.html">Admissions</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../portail/login.html">Portail</a>
+    </nav>
+
+    <div class="ms-footer-right">
+      <form class="ms-footer-newsletter" onsubmit="event.preventDefault();">
+        <input type="email" placeholder="Votre email" aria-label="Votre email">
+        <button type="submit">S’abonner</button>
+      </form>
+      <div class="ms-footer-socials">
+        <a href="https://www.facebook.com/profile.php?id=100045061854399" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+        <a href="#" aria-label="YouTube — Bientôt disponible" class="social-soon">▶</a>
+        <a href="#" aria-label="Instagram — Bientôt disponible" class="social-soon">◎</a>
+      </div>
+    </div>
+  </div>
+  <div class="ms-footer-copy">© 2026 Complexe Scolaire Privé Franco-Arabe Mihyarou Souna</div>
+</footer>
+
+<script src="js/annonce.js"></script>
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parents / Professeurs - Mihyarou Souna</title>
+<style>
+:root {
+  --green:#075e57;
+  --green2:#0b7a74;
+  --gold:#d79a12;
+  --light:#f7faf9;
+  --text:#10233f;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  min-height:100vh;
+  font-family:Arial, sans-serif;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(215,154,18,.18), transparent 25%),
+    linear-gradient(135deg,#eef8f6,#ffffff);
+  color:var(--text);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:32px 18px;
+}
+.login-shell{
+  width:min(1050px,100%);
+  display:grid;
+  grid-template-columns:1fr .9fr;
+  background:#fff;
+  border-radius:26px;
+  overflow:hidden;
+  box-shadow:0 24px 70px rgba(16,35,63,.14);
+  border:1px solid rgba(7,94,87,.08);
+}
+.login-info{
+  background:linear-gradient(135deg,var(--green),var(--green2));
+  color:#fff;
+  padding:46px;
+  position:relative;
+  overflow:hidden;
+}
+.login-info::after{
+  content:"";
+  position:absolute;
+  width:260px;height:260px;border-radius:50%;
+  background:rgba(215,154,18,.16);
+  right:-90px;bottom:-90px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-bottom:40px;
+  position:relative;
+  z-index:1;
+}
+.brand img{
+  width:64px;height:64px;
+  border-radius:14px;
+  background:#fff;
+  object-fit:contain;
+  padding:5px;
+}
+.brand h1{font-size:22px;margin:0 0 4px}
+.brand p{margin:0;font-size:13px;opacity:.95;font-weight:700}
+.login-info h2{position:relative;z-index:1;font-size:22px;white-space:nowrap;
+  line-height:1.15;
+  margin:0 0 16px;
+}
+.login-info .lead{
+  position:relative;z-index:1;
+  line-height:1.75;
+  font-size:15px;
+  max-width:520px;
+  opacity:.96;
+}
+.portal-features{
+  position:relative;z-index:1;
+  display:grid;
+  gap:12px;
+  margin-top:28px;
+}
+.portal-feature{
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:14px;
+  padding:13px 14px;
+  font-size:14px;
+  font-weight:700;
+}
+.login-card{
+  padding:46px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.badge{
+  width:max-content;
+  background:#fff8e8;
+  color:var(--gold);
+  border:1px solid rgba(215,154,18,.25);
+  border-radius:999px;
+  padding:8px 13px;
+  font-weight:900;
+  font-size:12px;
+  margin-bottom:18px;
+}
+.login-card h2{
+  margin:0 0 8px;
+  color:var(--green);
+  font-size:28px;
+}
+.login-card .hint{
+  margin:0 0 24px;
+  line-height:1.55;
+  color:#486174;
+  font-size:14px;
+}
+.form-group{margin-bottom:14px}
+label{
+  display:block;
+  font-size:13px;
+  font-weight:800;
+  margin-bottom:7px;
+  color:#17324d;
+}
+input,select{
+  width:100%;
+  border:1px solid #dfe9e7;
+  background:#fbfdfd;
+  border-radius:13px;
+  padding:13px 14px;
+  outline:none;
+  font-size:14px;
+}
+input:focus,select:focus{
+  border-color:var(--green);
+  box-shadow:0 0 0 3px rgba(7,94,87,.10);
+}
+.login-btn{
+  width:100%;
+  border:none;
+  background:var(--gold);
+  color:#fff;
+  border-radius:999px;
+  padding:13px 18px;
+  font-weight:900;
+  font-size:15px;
+  cursor:pointer;
+  margin-top:8px;
+}
+.login-links{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:16px;
+  font-size:13px;
+}
+.login-links a{
+  color:var(--green);
+  text-decoration:none;
+  font-weight:800;
+}
+.back{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-top:26px;
+  color:#486174;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:800;
+}
+.notice{
+  margin-top:18px;
+  background:#eef8f6;
+  border-left:4px solid var(--green);
+  border-radius:12px;
+  padding:12px 13px;
+  font-size:12px;
+  line-height:1.45;
+  color:#486174;
+}
+@media(max-width:850px){
+  .login-shell{grid-template-columns:1fr}
+  .login-info,.login-card{padding:30px}
+  .login-info h2{font-size:28px}
+}
+</style>
+</head>
+<body>
+  <main class="login-shell">
+    <section class="login-info">
+      <div class="brand">
+        <img src="../assets/logo.png" alt="Logo Mihyarou Souna">
+        <div>
+          <h1>Mihyarou Souna</h1>
+          <p>Discipline • Travail • Réussite</p>
+        </div>
+      </div>
+      <h2>Parents / Professeurs</h2>
+      <p class="lead">Un portail dédié au suivi scolaire, aux échanges avec l’administration et à l’accompagnement des élèves dans leur parcours éducatif.</p>
+      <div class="portal-features">
+        <div class="portal-feature">👨‍👩‍👧 Parents : suivi des informations scolaires et administratives</div>
+        <div class="portal-feature">👩‍🏫 Professeurs : accès aux outils pédagogiques et communications</div>
+        <div class="portal-feature">🔐 Accès sécurisé réservé aux membres autorisés</div>
+      </div>
+    </section>
+
+    <section class="login-card">
+      <span class="badge">Portail sécurisé</span>
+      <h2>Connexion</h2>
+      <p class="hint">Connectez-vous à votre espace pour accéder aux services réservés aux parents et professeurs.</p>
+
+      <form onsubmit="event.preventDefault(); alert('Portail en cours de configuration.');">
+        <div class="form-group">
+          <label for="profil">Profil</label>
+          <select id="profil">
+            <option>Parent</option>
+            <option>Professeur</option>
+            <option>Administration</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="identifiant">Identifiant</label>
+          <input id="identifiant" type="text" placeholder="Votre identifiant">
+        </div>
+        <div class="form-group">
+          <label for="password">Mot de passe</label>
+          <input id="password" type="password" placeholder="Votre mot de passe">
+        </div>
+        <button class="login-btn" type="submit">Se connecter</button>
+      </form>
+
+      <div class="login-links">
+        <a href="#">Mot de passe oublié ?</a>
+        <a href="../contact.html">Demander un accès</a>
+      </div>
+
+      <div class="notice">
+        Pour obtenir vos identifiants, veuillez contacter l’administration de l’établissement.
+      </div>
+
+      <a class="back" href="../index.html">← Retour à l’accueil</a>
+    </section>
+  </main>
+<script src="../js/annonce.js"></script>
+</body>
+</html>
