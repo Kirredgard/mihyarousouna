@@ -1,9 +1,11 @@
 (function() {
   // ── Configuration ────────────────────────────────────────────
+  var _depth = (window.location.pathname.match(/\//g) || []).length - 1;
+  var _prefix = _depth > 1 ? '../' : '';
   var ANNONCE = {
     texte:  "📢 Inscriptions 2026–2027 ouvertes\u00a0! Places limitées.",
     bouton: "Nous contacter",
-    lien:   "../contact.html"
+    lien:   _prefix + "contact.html"
   };
   // ─────────────────────────────────────────────────────────────
 
