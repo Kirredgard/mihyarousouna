@@ -3,7 +3,7 @@
  * Fonctionne sur toutes les pages via data-i18n="clé"
  * RTL automatique en arabe
  */
-(function () { 
+(function () {
 
   /* ─── Dictionnaire ─────────────────────────────── */
   var T = {
