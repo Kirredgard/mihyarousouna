@@ -32,3 +32,4 @@ function gererSpaceBtn() {
 
 gererSpaceBtn();
 window.addEventListener('resize', gererSpaceBtn);
+
