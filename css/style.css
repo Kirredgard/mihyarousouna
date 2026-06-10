@@ -549,7 +549,7 @@ main { overflow: hidden; }
   .programs-hero, .programs-wrap { max-width: 1700px; }
   .contact-hero, .contact-wrap { max-width: 1700px; }
   .presentation-hero, .presentation-wrap { max-width: 1700px; }
-  .ms-footer-wrap { max-width: 1800px; padding: 14px 40px; }
+  .ms-footer-wrap { max-width: 1400px; padding: 14px 80px; }
 }
 
 /* ── Grand écran 1537–1920px ── */
@@ -560,7 +560,7 @@ main { overflow: hidden; }
   .pillars { padding: 12px 88px 20px; }
   .content-grid { padding: 0 88px 20px; }
   .section-block { margin: 0 88px 32px; }
-  .ms-footer-wrap { max-width: 1700px; padding: 12px 60px; }
+  .ms-footer-wrap { max-width: 1400px; padding: 12px 72px; }
 }
 
 /* ── Écran moyen 1281–1536px ── */
@@ -571,7 +571,7 @@ main { overflow: hidden; }
   .pillars { padding: 10px 80px 18px; }
   .content-grid { padding: 0 80px 18px; }
   .section-block { margin: 0 80px 28px; }
-  .ms-footer-wrap { max-width: 1500px; padding: 10px 48px; }
+  .ms-footer-wrap { max-width: 1300px; padding: 10px 56px; }
 }
 
 /* ── Petit laptop 1025–1280px ── */
@@ -588,7 +588,7 @@ main { overflow: hidden; }
   .mission h2 { font-size: 23px; }
   .section-block { margin: 0 32px 24px; }
   .campus-grid, .info-grid, .contact-grid { grid-template-columns: repeat(2, 1fr); }
-  .ms-footer-wrap { max-width: 100%; padding: 10px 32px; }
+  .ms-footer-wrap { max-width: 1200px; padding: 10px 48px; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
   .footer-contact { text-align: left; }
 }

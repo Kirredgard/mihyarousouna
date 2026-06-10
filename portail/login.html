@@ -200,55 +200,54 @@ input:focus,select:focus{
         <img src="../assets/logo.png" alt="Logo Mihyarou Souna">
         <div>
           <h1>Mihyarou Souna</h1>
-          <p>Discipline • Travail • Réussite</p>
+          <p data-i18n="footer.slogan">Discipline • Travail • Réussite</p>
         </div>
       </div>
-      <h2>Parents / Professeurs</h2>
-      <p class="lead">Un portail dédié au suivi scolaire, aux échanges avec l’administration et à l’accompagnement des élèves dans leur parcours éducatif.</p>
+      <h2 data-i18n="login.title">Parents / Professeurs</h2>
+      <p class="lead" data-i18n="login.lead">Un portail dédié au suivi scolaire, aux échanges avec l’administration et à l’accompagnement des élèves dans leur parcours éducatif.</p>
       <div class="portal-features">
-        <div class="portal-feature">👨‍👩‍👧 Parents : suivi des informations scolaires et administratives</div>
-        <div class="portal-feature">👩‍🏫 Professeurs : accès aux outils pédagogiques et communications</div>
-        <div class="portal-feature">🔐 Accès sécurisé réservé aux membres autorisés</div>
+        <div class="portal-feature" data-i18n="login.feature1">👨‍👩‍👧 Parents : suivi des informations scolaires et administratives</div>
+        <div class="portal-feature" data-i18n="login.feature2">👩‍🏫 Professeurs : accès aux outils pédagogiques et communications</div>
+        <div class="portal-feature" data-i18n="login.feature3">🔐 Accès sécurisé réservé aux membres autorisés</div>
       </div>
     </section>
 
     <section class="login-card">
-      <span class="badge">Portail sécurisé</span>
-      <h2>Connexion</h2>
-      <p class="hint">Connectez-vous à votre espace pour accéder aux services réservés aux parents et professeurs.</p>
+      <span class="badge" data-i18n="login.secure">Portail sécurisé</span>
+      <h2 data-i18n="login.connexion">Connexion</h2>
+      <p class="hint" data-i18n="login.hint">Connectez-vous à votre espace pour accéder aux services réservés aux parents et professeurs.</p>
 
-      <form onsubmit="event.preventDefault(); alert('Portail en cours de configuration.');">
+      <form onsubmit="event.preventDefault(); alert((document.documentElement.lang === 'ar') ? 'البوابة قيد الإعداد.' : 'Portail en cours de configuration.');">
         <div class="form-group">
-          <label for="profil">Profil</label>
+          <label for="profil" data-i18n="login.profil">Profil</label>
           <select id="profil">
-            <option>Parent</option>
-            <option>Professeur</option>
-            <option>Administration</option>
+            <option data-i18n="login.parent">Parent</option>
+            <option data-i18n="login.prof">Professeur</option>
+            <option data-i18n="login.admin">Administration</option>
           </select>
         </div>
         <div class="form-group">
-          <label for="identifiant">Identifiant</label>
-          <input id="identifiant" type="text" placeholder="Votre identifiant">
+          <label for="identifiant" data-i18n="login.identifiant">Identifiant</label>
+          <input id="identifiant" type="text" placeholder="Votre identifiant" data-i18n="login.identifiant.ph">
         </div>
         <div class="form-group">
-          <label for="password">Mot de passe</label>
-          <input id="password" type="password" placeholder="Votre mot de passe">
+          <label for="password" data-i18n="login.password">Mot de passe</label>
+          <input id="password" type="password" placeholder="Votre mot de passe" data-i18n="login.password.ph">
         </div>
-        <button class="login-btn" type="submit">Se connecter</button>
+        <button class="login-btn" type="submit" data-i18n="login.btn">Se connecter</button>
       </form>
 
       <div class="login-links">
-        <a href="#">Mot de passe oublié ?</a>
-        <a href="../contact.html">Demander un accès</a>
+        <a href="#" data-i18n="login.forgot">Mot de passe oublié ?</a>
+        <a href="../contact.html" data-i18n="login.access">Demander un accès</a>
       </div>
 
-      <div class="notice">
-        Pour obtenir vos identifiants, veuillez contacter l’administration de l’établissement.
-      </div>
+      <div class="notice" data-i18n="login.notice">Pour obtenir vos identifiants, veuillez contacter l’administration de l’établissement.</div>
 
-      <a class="back" href="../index.html">← Retour à l’accueil</a>
+      <a class="back" href="../index.html" data-i18n="login.back">← Retour à l’accueil</a>
     </section>
   </main>
+<script src="../js/lang.js"></script>
 <script src="../js/annonce.js"></script>
 </body>
 </html>

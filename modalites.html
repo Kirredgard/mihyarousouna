@@ -323,21 +323,22 @@ line-height:1;
   <a href="index.html" class="brand"><img src="assets/logo.png" alt="Logo Mihyarou Souna"></a>
   <button class="menu" aria-label="Ouvrir le menu">☰</button>
   <nav class="nav">
-    <a  href="index.html">Accueil</a>
-    <a  href="apropos.html">À propos</a>
-    <a  href="ecoles.html">Nos écoles</a>
-    <a  href="programmes.html">Programmes</a>
-    <a  href="admissions.html">Admissions & Modalités</a>
-    <a  href="contact.html">Contact</a>
+    <a  href="index.html" data-i18n="nav.home">Accueil</a>
+    <a  href="apropos.html" data-i18n="nav.about">À propos</a>
+    <a  href="ecoles.html" data-i18n="nav.schools">Nos écoles</a>
+    <a  href="programmes.html" data-i18n="nav.programs">Programmes</a>
+    <a  href="admissions.html" data-i18n="nav.admissions">Admissions & Modalités</a>
+    <a  href="contact.html" data-i18n="nav.contact">Contact</a>
   </nav>
   <a class="space-btn" href="portail/login.html">
     <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    Parents / Professeurs
+    <span data-i18n="nav.portal">Parents / Professeurs</span>
   </a>
 </header>
-<main class="adm-page"><section class="adm-hero"><div class="adm-banner"><h1>Admissions & Modalités</h1><p>Les modalités sont maintenant regroupées avec la page Admissions.</p><p style="margin-top:14px"><a href="admissions.html" style="background:#d79a12;color:white;padding:10px 16px;border-radius:999px;text-decoration:none;font-weight:900;">Admissions & Modalités</a></p></div></section></main>
+<main class="adm-page"><section class="adm-hero"><div class="adm-banner"><h1 data-i18n="adm.h1.text">Admissions & Modalités</h1><p data-i18n="adm.redirect.msg">Les modalités sont maintenant regroupées avec la page Admissions.</p><p style="margin-top:14px"><a href="admissions.html" style="background:#d79a12;color:white;padding:10px 16px;border-radius:999px;text-decoration:none;font-weight:900;">Admissions & Modalités</a></p></div></section></main>
 
 <script src="js/script.js"></script>
+<script src="js/lang.js"></script>
 
 
 
@@ -347,8 +348,8 @@ line-height:1;
 <style>
 .ms-footer{width:100%;background:linear-gradient(90deg,#075e57,#0b7a74);border-top:3px solid #d79a12;color:#fff;font-family:inherit}
 .ms-footer *{box-sizing:border-box}
-.ms-footer-wrap{max-width:1600px;margin:auto;padding:10px 2px;display:grid;grid-template-columns:minmax(330px,1fr) auto minmax(330px,1fr);align-items:center;gap:24px}
-.ms-footer-brand{display:flex;align-items:center;gap:12px;justify-self:start;padding-left:0;margin-left:-35px}
+.ms-footer-wrap{max-width:1400px;margin:auto;padding:10px 48px;display:grid;grid-template-columns:minmax(330px,1fr) auto minmax(330px,1fr);align-items:center;gap:24px}
+.ms-footer-brand{display:flex;align-items:center;gap:12px;justify-self:start;padding-left:0;margin-left:0}
 .ms-footer-logo{width:52px;height:52px;border-radius:12px;background:#fff;object-fit:contain;padding:4px;box-shadow:0 6px 16px rgba(0,0,0,.12)}
 .ms-footer-title{font-size:18px;line-height:1;font-weight:800;margin-bottom:4px}
 .ms-footer-slogan{font-size:12px;font-weight:700;margin-bottom:5px;opacity:.95}
@@ -378,24 +379,24 @@ line-height:1;
       <img class="ms-footer-logo" style="margin-top:-8px;" src="assets/logo.png" alt="Logo Mihyarou Souna">
       <div style="padding-left:12px;padding-top:12px;display:flex;flex-direction:column;justify-content:center;">
         <div class="ms-footer-title">Mihyarou Souna</div>
-        <div class="ms-footer-slogan">Discipline • Travail • Réussite</div>
-        <div class="ms-footer-contact">📍 Parcelles Assainies & Keur Massar<br>☎ 33 878 27 42 • 77 157 90 06<br>✉ mihyaroufa@gmail.com</div>
+        <div class="ms-footer-slogan" data-i18n="footer.slogan">Discipline • Travail • Réussite</div>
+        <div class="ms-footer-contact" data-i18n="footer.contact.info" data-i18n-html="true">📍 Parcelles Assainies &amp; Keur Massar<br>☎ 33 878 27 42 • 77 157 90 06<br>✉ mihyaroufa@gmail.com</div>
       </div>
     </div>
 
     <nav class="ms-footer-nav" aria-label="Navigation pied de page">
-      <a href="index.html">Accueil</a>
-      <a href="ecoles.html">Nos écoles</a>
-      <a href="programmes.html">Programmes</a>
-      <a href="admissions.html">Admissions</a>
-      <a href="contact.html">Contact</a>
-      <a href="portail/login.html">Portail</a>
+      <a href="index.html" data-i18n="footer.nav.home">Accueil</a>
+      <a href="ecoles.html" data-i18n="footer.nav.schools">Nos écoles</a>
+      <a href="programmes.html" data-i18n="footer.nav.programs">Programmes</a>
+      <a href="admissions.html" data-i18n="footer.nav.adm">Admissions</a>
+      <a href="contact.html" data-i18n="footer.nav.contact">Contact</a>
+      <a href="portail/login.html" data-i18n="footer.nav.portal">Portail</a>
     </nav>
 
     <div class="ms-footer-right">
       <form class="ms-footer-newsletter" onsubmit="event.preventDefault();">
-        <input type="email" placeholder="Votre email" aria-label="Votre email">
-        <button type="submit">S’abonner</button>
+        <input type="email" placeholder="Votre email" data-i18n="footer.email" aria-label="Votre email">
+        <button type="submit" data-i18n="footer.subscribe">S’abonner</button>
       </form>
       <div class="ms-footer-socials">
         <a href="https://www.facebook.com/profile.php?id=100045061854399" target="_blank" rel="noopener" aria-label="Facebook">f</a>
@@ -404,7 +405,7 @@ line-height:1;
       </div>
     </div>
   </div>
-  <div class="ms-footer-copy">© 2026 Complexe Scolaire Privé Franco-Arabe Mihyarou Souna</div>
+  <div class="ms-footer-copy" data-i18n="footer.copy">© 2026 Complexe Scolaire Privé Franco-Arabe Mihyarou Souna</div>
 </footer>
 
 <script src="js/annonce.js"></script>
